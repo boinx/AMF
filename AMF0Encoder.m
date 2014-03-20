@@ -83,6 +83,11 @@
 		return [self encodeDictionary:object error:error];
 	}
 	
+	if([object isKindOfClass:NSNull.class])
+	{
+		return [self encodeNullWithError:error];
+	}
+	
 	NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
 	return NO;
 }
@@ -203,6 +208,80 @@
 		return NO;
 	}
 	
+	NSNumber *typeKey = [dictionary objectForKey:AMF0TypeKey];
+	
+	if(typeKey.intValue == AMF0TypeECMAArray)
+	{
+		const uint8_t type = AMF0TypeECMAArray;
+		NSInteger length = [self.stream write:&type maxLength:sizeof(type)];
+		if(length != sizeof(type))
+		{
+			NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+			return NO;
+		}
+		
+		const uint32_t count = OSSwapBigToHostInt32(dictionary.count);
+		length = [self.stream write:(uint8_t *)&count maxLength:sizeof(count)];
+		if(length != sizeof(count))
+		{
+			NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+			return NO;
+		}
+		
+		for(NSString *key in dictionary)
+		{
+			if(![key isKindOfClass:NSString.class])
+			{
+				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+				return NO;
+			}
+			
+			if([key hasPrefix:AMF0KeyPrefix])
+			{
+				continue;
+			}
+			
+			NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+			
+			{
+				const uint16_t keyLength = OSSwapBigToHostInt16(keyData.length);
+				length = [self.stream write:(uint8_t *)&keyLength maxLength:sizeof(keyLength)];
+				if(length != sizeof(keyLength))
+				{
+					NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+					return NO;
+				}
+			}
+			
+			length = [self.stream write:keyData.bytes maxLength:keyData.length];
+			if(length != keyData.length)
+			{
+				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+				return NO;
+			}
+			
+			id object = [dictionary objectForKey:key];
+			
+			if(![self encodeObject:object error:error])
+			{
+				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+				return NO;
+			}
+		}
+		
+		{
+			const uint8_t type[3] = { 0x00, 0x00, AMF0TypeObjectEnd };
+			NSInteger length = [self.stream write:type maxLength:sizeof(type)];
+			if(length != sizeof(type))
+			{
+				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+				return NO;
+			}
+		}
+		
+		return YES;
+	}
+	else
 	{
 		const uint8_t type = AMF0TypeObject;
 		NSInteger length = [self.stream write:&type maxLength:sizeof(type)];
@@ -218,6 +297,11 @@
 			{
 				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
 				return NO;
+			}
+			
+			if([key hasPrefix:AMF0KeyPrefix])
+			{
+				continue;
 			}
 
 			NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
@@ -260,74 +344,19 @@
 		
 		return YES;
 	}
-	
-#if 0
+}
+
+- (BOOL)encodeNullWithError:(NSError **)error
+{
+	const uint8_t type = AMF0TypeNull;
+	NSInteger length = [self.stream write:&type maxLength:sizeof(type)];
+	if(length != sizeof(type))
 	{
-		const uint8_t type = AMF0TypeECMAArray;
-		NSInteger length = [self.stream write:&type maxLength:sizeof(type)];
-		if(length != sizeof(type))
-		{
-			NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-			return NO;
-		}
-	
-		const uint32_t count = OSSwapBigToHostInt32(dictionary.count);
-		length = [self.stream write:(uint8_t *)&count maxLength:sizeof(count)];
-		if(length != sizeof(count))
-		{
-			NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-			return NO;
-		}
-	
-		for(NSString *key in dictionary)
-		{
-			if(![key isKindOfClass:NSString.class])
-			{
-				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-				return NO;
-			}
-		
-			NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-		
-			{
-				const uint16_t keyLength = OSSwapBigToHostInt16(keyData.length);
-				length = [self.stream write:(uint8_t *)&keyLength maxLength:sizeof(keyLength)];
-				if(length != sizeof(keyLength))
-				{
-					NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-					return NO;
-				}
-			}
-		
-			length = [self.stream write:keyData.bytes maxLength:keyData.length];
-			if(length != keyData.length)
-			{
-				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-				return NO;
-			}
-		
-			id object = [dictionary objectForKey:key];
-		
-			if(![self encodeObject:object error:error])
-			{
-				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-				return NO;
-			}
-		}
-		
-		{
-			const uint8_t type[3] = { 0x00, 0x00, AMF0TypeObjectEnd };
-			NSInteger length = [self.stream write:&type maxLength:sizeof(type)];
-			if(length != sizeof(type))
-			{
-				NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
-				return NO;
-			}
-		}
-		
-		return YES;
+		NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+		return NO;
 	}
-#endif
+	
+	return YES;
 }
 
 @end

@@ -15,3 +15,7 @@ typedef NS_ENUM(uint8_t, AMF0Type) {
 	AMF0TypeTypedObject = 0x10,
 	AMF0TypeSwitchToAMF3 = 0x11,
 };
+
+extern NSString * const AMF0TypeKey;
+
+extern NSString * const AMF0KeyPrefix;

@@ -84,6 +84,11 @@
 
 - (id)decodeObjectWithError:(NSError **)error
 {
+	if(!self.stream.hasBytesAvailable)
+	{
+		return nil;
+	}
+	
 	int type = [self decodeTypeWithError:error];
 	if(type < 0)
 	{
@@ -104,6 +109,9 @@
 			
 		case AMF0TypeObject:
 			return [self decodeAMFObjectWithError:error];
+			
+		case AMF0TypeNull:
+			return NSNull.null;
 			
 		case AMF0TypeECMAArray:
 			return [self decodeECMAArrayWithError:error];
@@ -198,12 +206,14 @@
 			id key = [self decodeStringWithError:error];
 			if(key == nil)
 			{
+				NSLog(@"%s:%d", __FUNCTION__, __LINE__);
 				return nil;
 			}
 			
 			id value = [self decodeObjectWithError:error];
 			if(value == nil)
 			{
+				NSLog(@"%s:%d", __FUNCTION__, __LINE__);
 				return nil;
 			}
 			
@@ -230,13 +240,13 @@
 		return nil;
 	}
 	
-	count = OSSwapBigToHostConstInt32(count);
+	count = OSSwapBigToHostConstInt32(count); // this value is unreliable
 	
 	@autoreleasepool
 	{
 		NSMutableDictionary *objects = [NSMutableDictionary dictionaryWithCapacity:count];
 
-		for(uint32_t index = 0; index < count; ++index)
+		while(YES)
 		{
 			id key = [self decodeStringWithError:error];
 			if(key == nil)
@@ -252,21 +262,12 @@
 				return nil;
 			}
 			
+			if([value isKindOfClass:AMF0EndOfObjectMarker.class])
+			{
+				break;
+			}
+			
 			[objects setObject:value forKey:key];
-		}
-		
-		NSString *key = [self decodeStringWithError:error];
-		if(key == nil)
-		{
-			NSLog(@"%s:%d", __FUNCTION__, __LINE__);
-			return nil;
-		}
-		
-		int type = [self decodeTypeWithError:error];
-		if(type != AMF0TypeObjectEnd)
-		{
-			NSLog(@"%s:%d", __FUNCTION__, __LINE__);
-			return nil;
 		}
 		
 		return [NSDictionary dictionaryWithDictionary:objects];

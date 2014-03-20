@@ -19,6 +19,7 @@
 		50B3383418D86C9600380ECB /* AMFEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B3382B18D86C9600380ECB /* AMFEncoder.h */; };
 		50B3383518D86C9600380ECB /* AMFSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B3382C18D86C9600380ECB /* AMFSerialization.h */; };
 		50B3383618D86C9600380ECB /* AMFSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B3382D18D86C9600380ECB /* AMFSerialization.m */; };
+		50B3396718DB530800380ECB /* AMF0.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B3396618DB530800380ECB /* AMF0.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		50B3382B18D86C9600380ECB /* AMFEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMFEncoder.h; sourceTree = "<group>"; };
 		50B3382C18D86C9600380ECB /* AMFSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMFSerialization.h; sourceTree = "<group>"; };
 		50B3382D18D86C9600380ECB /* AMFSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMFSerialization.m; sourceTree = "<group>"; };
+		50B3396618DB530800380ECB /* AMF0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMF0.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				50B337E518D842D500380ECB /* AMF-Prefix.pch */,
 				50B337E618D842D500380ECB /* AMF.h */,
 				50B3382518D86C9600380ECB /* AMF0.h */,
+				50B3396618DB530800380ECB /* AMF0.m */,
 				50B3382A18D86C9600380ECB /* AMFDecoder.h */,
 				50B3382618D86C9600380ECB /* AMF0Decoder.h */,
 				50B3382718D86C9600380ECB /* AMF0Decoder.m */,
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B3383218D86C9600380ECB /* AMF0Encoder.m in Sources */,
+				50B3396718DB530800380ECB /* AMF0.m in Sources */,
 				50B3383018D86C9600380ECB /* AMF0Decoder.m in Sources */,
 				50B3383618D86C9600380ECB /* AMFSerialization.m in Sources */,
 			);
