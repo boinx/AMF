@@ -220,7 +220,7 @@
 			return NO;
 		}
 		
-		const uint32_t count = OSSwapBigToHostInt32(dictionary.count);
+		const uint32_t count = OSSwapBigToHostInt32(dictionary.count - 1);
 		length = [self.stream write:(uint8_t *)&count maxLength:sizeof(count)];
 		if(length != sizeof(count))
 		{
