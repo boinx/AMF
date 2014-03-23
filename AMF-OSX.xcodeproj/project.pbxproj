@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		509D91F018DF908500FC9A7A /* AMF3.h in Headers */ = {isa = PBXBuildFile; fileRef = 509D91EE18DF908500FC9A7A /* AMF3.h */; };
+		509D91F118DF908500FC9A7A /* AMF3.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D91EF18DF908500FC9A7A /* AMF3.m */; };
 		50B3377918D83F5100380ECB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B3377818D83F5100380ECB /* Cocoa.framework */; };
 		50B337E818D842D500380ECB /* AMF-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 50B337E518D842D500380ECB /* AMF-Prefix.pch */; };
 		50B337E918D842D500380ECB /* AMF.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B337E618D842D500380ECB /* AMF.h */; };
@@ -23,7 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50B3377518D83F5100380ECB /* libAMF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAMF.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		509D91EE18DF908500FC9A7A /* AMF3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMF3.h; sourceTree = "<group>"; };
+		509D91EF18DF908500FC9A7A /* AMF3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMF3.m; sourceTree = "<group>"; };
+		50B3377518D83F5100380ECB /* libAMF-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libAMF-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B3377818D83F5100380ECB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50B3377B18D83F5100380ECB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		50B3377C18D83F5100380ECB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -55,6 +59,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		509D91F218DF909700FC9A7A /* AMF0 */ = {
+			isa = PBXGroup;
+			children = (
+				50B3382518D86C9600380ECB /* AMF0.h */,
+				50B3396618DB530800380ECB /* AMF0.m */,
+				50B3382618D86C9600380ECB /* AMF0Decoder.h */,
+				50B3382718D86C9600380ECB /* AMF0Decoder.m */,
+				50B3382818D86C9600380ECB /* AMF0Encoder.h */,
+				50B3382918D86C9600380ECB /* AMF0Encoder.m */,
+			);
+			name = AMF0;
+			sourceTree = "<group>";
+		};
+		509D91F318DF90A400FC9A7A /* AMF3 */ = {
+			isa = PBXGroup;
+			children = (
+				509D91EE18DF908500FC9A7A /* AMF3.h */,
+				509D91EF18DF908500FC9A7A /* AMF3.m */,
+			);
+			name = AMF3;
+			sourceTree = "<group>";
+		};
 		50B3376C18D83F5100380ECB = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +93,7 @@
 		50B3377618D83F5100380ECB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50B3377518D83F5100380ECB /* libAMF.a */,
+				50B3377518D83F5100380ECB /* libAMF-OSX.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,14 +123,10 @@
 			children = (
 				50B337E518D842D500380ECB /* AMF-Prefix.pch */,
 				50B337E618D842D500380ECB /* AMF.h */,
-				50B3382518D86C9600380ECB /* AMF0.h */,
-				50B3396618DB530800380ECB /* AMF0.m */,
 				50B3382A18D86C9600380ECB /* AMFDecoder.h */,
-				50B3382618D86C9600380ECB /* AMF0Decoder.h */,
-				50B3382718D86C9600380ECB /* AMF0Decoder.m */,
 				50B3382B18D86C9600380ECB /* AMFEncoder.h */,
-				50B3382818D86C9600380ECB /* AMF0Encoder.h */,
-				50B3382918D86C9600380ECB /* AMF0Encoder.m */,
+				509D91F218DF909700FC9A7A /* AMF0 */,
+				509D91F318DF90A400FC9A7A /* AMF3 */,
 				50B3382C18D86C9600380ECB /* AMFSerialization.h */,
 				50B3382D18D86C9600380ECB /* AMFSerialization.m */,
 			);
@@ -121,6 +143,7 @@
 				50B3382E18D86C9600380ECB /* AMF0.h in Headers */,
 				50B3383118D86C9600380ECB /* AMF0Encoder.h in Headers */,
 				50B3383518D86C9600380ECB /* AMFSerialization.h in Headers */,
+				509D91F018DF908500FC9A7A /* AMF3.h in Headers */,
 				50B3383418D86C9600380ECB /* AMFEncoder.h in Headers */,
 				50B3383318D86C9600380ECB /* AMFDecoder.h in Headers */,
 				50B3382F18D86C9600380ECB /* AMF0Decoder.h in Headers */,
@@ -132,9 +155,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		50B3377418D83F5100380ECB /* AMF */ = {
+		50B3377418D83F5100380ECB /* AMF-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50B3379918D83F5100380ECB /* Build configuration list for PBXNativeTarget "AMF" */;
+			buildConfigurationList = 50B3379918D83F5100380ECB /* Build configuration list for PBXNativeTarget "AMF-OSX" */;
 			buildPhases = (
 				50B3377118D83F5100380ECB /* Sources */,
 				50B3377218D83F5100380ECB /* Frameworks */,
@@ -144,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = AMF;
+			name = "AMF-OSX";
 			productName = AMF;
-			productReference = 50B3377518D83F5100380ECB /* libAMF.a */;
+			productReference = 50B3377518D83F5100380ECB /* libAMF-OSX.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -155,10 +178,11 @@
 		50B3376D18D83F5100380ECB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AMF;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Boinx Software";
+				ORGANIZATIONNAME = McZonk;
 			};
-			buildConfigurationList = 50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF" */;
+			buildConfigurationList = 50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF-OSX" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -170,7 +194,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50B3377418D83F5100380ECB /* AMF */,
+				50B3377418D83F5100380ECB /* AMF-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509D91F118DF908500FC9A7A /* AMF3.m in Sources */,
 				50B3383218D86C9600380ECB /* AMF0Encoder.m in Sources */,
 				50B3396718DB530800380ECB /* AMF0.m in Sources */,
 				50B3383018D86C9600380ECB /* AMF0Decoder.m in Sources */,
@@ -265,7 +290,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AMF-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AMF-OSX";
 			};
 			name = Debug;
 		};
@@ -274,14 +299,14 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AMF-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AMF-OSX";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF" */ = {
+		50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50B3379718D83F5100380ECB /* Debug */,
@@ -290,7 +315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50B3379918D83F5100380ECB /* Build configuration list for PBXNativeTarget "AMF" */ = {
+		50B3379918D83F5100380ECB /* Build configuration list for PBXNativeTarget "AMF-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50B3379A18D83F5100380ECB /* Debug */,
