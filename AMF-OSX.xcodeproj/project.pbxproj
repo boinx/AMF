@@ -119,7 +119,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AMF;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = McZonk;
 			};
 			buildConfigurationList = 50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF-OSX" */;
@@ -228,6 +228,7 @@
 		50B3379A18D83F5100380ECB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AMF-Prefix.pch";
 				PRODUCT_NAME = AMF;
@@ -237,6 +238,7 @@
 		50B3379B18D83F5100380ECB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AMF-Prefix.pch";
 				PRODUCT_NAME = AMF;
