@@ -12,14 +12,7 @@
 
 + (instancetype)endOfObjectMarker
 {
-	static AMF0EndOfObjectMarker *marker = nil;
-	
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		marker = [[AMF0EndOfObjectMarker alloc] init];
-	});
-	
-	return marker;
+	return [[self alloc] init];
 }
 
 @end

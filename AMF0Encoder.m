@@ -1,6 +1,8 @@
 #import "AMF0Encoder.h"
 
 #import "AMF0.h"
+#import "AMFError.h"
+
 
 @interface AMF0Encoder () <NSStreamDelegate>
 
@@ -88,7 +90,18 @@
 		return [self encodeNullWithError:error];
 	}
 	
-	NSLog(@"ERROR %s:%d", __FUNCTION__, __LINE__);
+	if(error != NULL)
+	{
+		NSDictionary *userInfo = @{
+			NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Invalid object: %@", object],
+		};
+		*error = [NSError errorWithDomain:AMFErrorDomain code:AMFErrorInvalidObject userInfo:userInfo];
+	}
+	else
+	{
+		NSLog(@"ERROR %s:%d Invalid object: %@", __FUNCTION__, __LINE__, object);
+	}
+	
 	return NO;
 }
 

@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5053A02419D7761C00A2F024 /* AMF0EncoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5053A02319D7761C00A2F024 /* AMF0EncoderTests.m */; };
 		509D91F118DF908500FC9A7A /* AMF3.m in Sources */ = {isa = PBXBuildFile; fileRef = 509D91EF18DF908500FC9A7A /* AMF3.m */; };
 		50B3383018D86C9600380ECB /* AMF0Decoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B3382718D86C9600380ECB /* AMF0Decoder.m */; };
 		50B3383218D86C9600380ECB /* AMF0Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B3382918D86C9600380ECB /* AMF0Encoder.m */; };
 		50B3383618D86C9600380ECB /* AMFSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B3382D18D86C9600380ECB /* AMFSerialization.m */; };
 		50B3396718DB530800380ECB /* AMF0.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B3396618DB530800380ECB /* AMF0.m */; };
+		50FDC58F19D7783E005A30EF /* libAMF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B3377518D83F5100380ECB /* libAMF.a */; };
+		50FDC59319D7DB24005A30EF /* AMF0SerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FDC59219D7DB24005A30EF /* AMF0SerializationTests.m */; };
+		50FDC59619D7DBFF005A30EF /* AMFError.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FDC59519D7DBFF005A30EF /* AMFError.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		50FDC59019D77842005A30EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50B3376D18D83F5100380ECB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50B3377418D83F5100380ECB;
+			remoteInfo = AMF;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5053A01F19D7761C00A2F024 /* AMFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5053A02219D7761C00A2F024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5053A02319D7761C00A2F024 /* AMF0EncoderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMF0EncoderTests.m; sourceTree = "<group>"; };
 		509D91EE18DF908500FC9A7A /* AMF3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMF3.h; sourceTree = "<group>"; };
 		509D91EF18DF908500FC9A7A /* AMF3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMF3.m; sourceTree = "<group>"; };
 		50B3377518D83F5100380ECB /* libAMF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAMF.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,9 +47,33 @@
 		50B3382C18D86C9600380ECB /* AMFSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMFSerialization.h; sourceTree = "<group>"; };
 		50B3382D18D86C9600380ECB /* AMFSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMFSerialization.m; sourceTree = "<group>"; };
 		50B3396618DB530800380ECB /* AMF0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMF0.m; sourceTree = "<group>"; };
+		50FDC59219D7DB24005A30EF /* AMF0SerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMF0SerializationTests.m; sourceTree = "<group>"; };
+		50FDC59419D7DBFF005A30EF /* AMFError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMFError.h; sourceTree = "<group>"; };
+		50FDC59519D7DBFF005A30EF /* AMFError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMFError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		5053A01C19D7761C00A2F024 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50FDC58F19D7783E005A30EF /* libAMF.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		5053A02019D7761C00A2F024 /* AMFTests */ = {
+			isa = PBXGroup;
+			children = (
+				5053A02319D7761C00A2F024 /* AMF0EncoderTests.m */,
+				50FDC59219D7DB24005A30EF /* AMF0SerializationTests.m */,
+				5053A02219D7761C00A2F024 /* Info.plist */,
+			);
+			path = AMFTests;
+			sourceTree = "<group>";
+		};
 		509D91F218DF909700FC9A7A /* AMF0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				50B337E418D842CC00380ECB /* AMF */,
+				5053A02019D7761C00A2F024 /* AMFTests */,
 				50B3377718D83F5100380ECB /* Frameworks */,
 				50B3377618D83F5100380ECB /* Products */,
 			);
@@ -68,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				50B3377518D83F5100380ECB /* libAMF.a */,
+				5053A01F19D7761C00A2F024 /* AMFTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +129,8 @@
 				50B337E618D842D500380ECB /* AMF.h */,
 				50B3382A18D86C9600380ECB /* AMFDecoder.h */,
 				50B3382B18D86C9600380ECB /* AMFEncoder.h */,
+				50FDC59419D7DBFF005A30EF /* AMFError.h */,
+				50FDC59519D7DBFF005A30EF /* AMFError.m */,
 				509D91F218DF909700FC9A7A /* AMF0 */,
 				509D91F318DF90A400FC9A7A /* AMF3 */,
 				50B3382C18D86C9600380ECB /* AMFSerialization.h */,
@@ -97,6 +142,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5053A01E19D7761C00A2F024 /* AMFTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5053A02719D7761C00A2F024 /* Build configuration list for PBXNativeTarget "AMFTests" */;
+			buildPhases = (
+				5053A01B19D7761C00A2F024 /* Sources */,
+				5053A01C19D7761C00A2F024 /* Frameworks */,
+				5053A01D19D7761C00A2F024 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50FDC59119D77842005A30EF /* PBXTargetDependency */,
+			);
+			name = AMFTests;
+			productName = AMFTests;
+			productReference = 5053A01F19D7761C00A2F024 /* AMFTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		50B3377418D83F5100380ECB /* AMF */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50B3379918D83F5100380ECB /* Build configuration list for PBXNativeTarget "AMF" */;
@@ -121,6 +184,11 @@
 				CLASSPREFIX = AMF;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = McZonk;
+				TargetAttributes = {
+					5053A01E19D7761C00A2F024 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
 			};
 			buildConfigurationList = 50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF-OSX" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -135,11 +203,31 @@
 			projectRoot = "";
 			targets = (
 				50B3377418D83F5100380ECB /* AMF */,
+				5053A01E19D7761C00A2F024 /* AMFTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5053A01D19D7761C00A2F024 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5053A01B19D7761C00A2F024 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50FDC59319D7DB24005A30EF /* AMF0SerializationTests.m in Sources */,
+				5053A02419D7761C00A2F024 /* AMF0EncoderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50B3377118D83F5100380ECB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,12 +237,61 @@
 				50B3396718DB530800380ECB /* AMF0.m in Sources */,
 				50B3383018D86C9600380ECB /* AMF0Decoder.m in Sources */,
 				50B3383618D86C9600380ECB /* AMFSerialization.m in Sources */,
+				50FDC59619D7DBFF005A30EF /* AMFError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		50FDC59119D77842005A30EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50B3377418D83F5100380ECB /* AMF */;
+			targetProxy = 50FDC59019D77842005A30EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5053A02519D7761C00A2F024 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AMFTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5053A02619D7761C00A2F024 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AMFTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		50B3379718D83F5100380ECB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -248,6 +385,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5053A02719D7761C00A2F024 /* Build configuration list for PBXNativeTarget "AMFTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5053A02519D7761C00A2F024 /* Debug */,
+				5053A02619D7761C00A2F024 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50B3377018D83F5100380ECB /* Build configuration list for PBXProject "AMF-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
