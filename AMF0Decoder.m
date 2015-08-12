@@ -106,6 +106,9 @@
 		case AMF0TypeNull:
 			return NSNull.null;
 			
+		case AMF0TypeUndefined:
+			return nil;
+			
 		case AMF0TypeECMAArray:
 			return [self decodeECMAArrayWithError:error];
 			
