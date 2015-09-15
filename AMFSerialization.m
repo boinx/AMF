@@ -123,7 +123,8 @@
 	{
 		NSMutableArray *objects = [NSMutableArray array];
 		
-		while(YES) {
+		while(YES)
+		{
 			id object = [decoder decodeObjectWithError:error];
 			if(object == nil)
 			{

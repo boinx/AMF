@@ -258,6 +258,11 @@
 				return nil;
 			}
 			
+			if ([key isEqual:AMF0TypeKey])
+			{
+				continue;
+			}
+			
 			if([value isKindOfClass:AMF0EndOfObjectMarker.class])
 			{
 				break;
