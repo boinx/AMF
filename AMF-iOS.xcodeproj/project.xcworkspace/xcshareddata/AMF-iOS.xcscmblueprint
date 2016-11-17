@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C9C9F21F259668F9016854FAFFE7721CA9E5E577",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C9C9F21F259668F9016854FAFFE7721CA9E5E577" : 0,
+    "7E174E69F43F7D6C8183AC07954467E9467DE13C" : 0,
+    "500BCDBBD50C68FB5D1D8B57E65C222CA01797F6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "82617437-8C18-4D42-9EF0-9A8B0A2173E8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C9C9F21F259668F9016854FAFFE7721CA9E5E577" : "AMF\/",
+    "7E174E69F43F7D6C8183AC07954467E9467DE13C" : "",
+    "500BCDBBD50C68FB5D1D8B57E65C222CA01797F6" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AMF-iOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AMF-iOS.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.assembla.com:mimolive-reporter.2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "500BCDBBD50C68FB5D1D8B57E65C222CA01797F6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.assembla.com:boinxtv.bxmo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E174E69F43F7D6C8183AC07954467E9467DE13C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/McZonk\/AMF.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C9C9F21F259668F9016854FAFFE7721CA9E5E577"
+    }
+  ]
+}
