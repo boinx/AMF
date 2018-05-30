@@ -182,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AMF;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = McZonk;
 				TargetAttributes = {
 					5053A01E19D7761C00A2F024 = {
